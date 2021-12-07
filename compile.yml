@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+    inputs:
+      project_name:
+        required: true
+        type: string
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo ${{ inputs.project_name }}
